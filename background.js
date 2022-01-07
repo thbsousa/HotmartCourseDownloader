@@ -178,7 +178,7 @@ function getVideoQualities(videoId) {
                 let qualities = httpReq.responseText.match(RegExp(`(.*).m3u8`, 'g')).map(function (i) { return i.replace('.m3u8', '').split('/')});
                 let i;
                 for(i = 0; i<qualities.length; i++) {
-                    if(Number(qualities[i][0]) >= 720) {
+                    if(Number(qualities[i][0]) >= 720 && qualities.length-1 == i) {
                         resolve(qualities[i]);
                     }
                 }
