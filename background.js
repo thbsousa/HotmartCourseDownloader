@@ -289,6 +289,8 @@ function doAgain(currentTab) {
                             courseName = String(courseName).replace(/[\\\/\:\*\?\"\<\>\|]/g, " -");
                             moduleName = String(moduleName).replace(/[\\\/\:\*\?\"\<\>\|]/g, " -");
                             videoName = String(videoName).replace(/[\\\/\:\*\?\"\<\>\|]/g, " -");
+                            
+                            courseName = courseName.length == 0 ? 'xyz' : courseName;
 
                             let filename = String(`${courseName}/${moduleName}/${videoName}.mp4`).replace(/(\s){2,}/g, " ")
 
